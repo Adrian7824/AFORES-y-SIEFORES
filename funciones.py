@@ -137,7 +137,7 @@ def load_and_process_excel(sheet_name, sheet_name_inv):
     inv = inv.iloc[:, 1:]
 
     # Fill forward NaN values
-    inv[inv.columns[0]] = inv[inv.columns[0]].fillna(method='ffill')
+    inv[inv.columns[0]] = inv[inv.columns[0]].ffill()
 
     # Create a MultiIndex from the first two columns
     index = pd.MultiIndex.from_tuples(
